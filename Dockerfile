@@ -1,5 +1,5 @@
 # 使用 Python 3.9.0 的官方镜像作为基础镜像
-FROM python:3.9.0
+FROM python:3.9-alpine
 
 # 设置工作目录
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . .
 RUN rm -rf tests
 
 # 使用多阶段构建
-FROM python:3.9.0
+FROM python:3.9-alpine
 WORKDIR /app
 COPY . /app
 
